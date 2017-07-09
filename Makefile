@@ -3,7 +3,7 @@ OUTPUT=mandelbrotOpenMPI
 IMAGE=.ppm
 
 CC=mpicc
-
+CC_OPT=-std=c11
 
 CC_OMP=-fopenmp
 
@@ -11,10 +11,10 @@ CC_OMP=-fopenmp
 all: $(OUTPUT)_omp $(OUTPUT)_seq
 
 $(OUTPUT)_omp: $(OUTPUT)_omp.c
-	$(CC) $(CC_OMP) $(OUTPUT)_omp.c -o $(OUTPUT)_omp
+	$(CC) $(CC_OPT) $(CC_OMP) $(OUTPUT)_omp.c -o $(OUTPUT)_omp
 
 $(OUTPUT)_seq: $(OUTPUT)_seq.c
-	$(CC) $(OUTPUT)_seq.c -o $(OUTPUT)_seq
+	$(CC) $(CC_OPT) $(OUTPUT)_seq.c -o $(OUTPUT)_seq
 
 .PHONY: clean
 clean:
