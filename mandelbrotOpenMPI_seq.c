@@ -71,7 +71,6 @@ void desallocate_iteration_buffer_MASTER(){
 
 void allocate_iteration_buffer_maquina(){
     //alocar pedaco do vetor a ser computado pelo maquina
-    image_buffer_size = image_buffer_size_MASTER / size;
     if (rank == size - 1)
         image_buffer_size += (image_buffer_size_MASTER % size);
     iteration_buffer = (int *) malloc(sizeof(int ) * image_buffer_size);
@@ -225,6 +224,7 @@ int main(int argc, char *argv[]){
     if (modo[0] == 'c')
         allocate_iteration_buffer_maquina();
 
+    image_buffer_size = image_buffer_size_MASTER / size;
     compute_mandelbrot();
 
     if (modo[0] == 'c') {
