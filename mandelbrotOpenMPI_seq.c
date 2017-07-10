@@ -191,7 +191,12 @@ void compute_mandelbrot(){
 
 int main(int argc, char *argv[]){
     init(argc, argv);
+    
+    if (modo[0]=='c')
+    	allocate_image_buffer_MASTER();
+
     MPI_Status stat;
+        
     MPI_Init(NULL, NULL);
     MPI_Comm_size(MPI_COMM_WORLD,&size);
     MPI_Comm_rank(MPI_COMM_WORLD,&rank);
@@ -200,17 +205,27 @@ int main(int argc, char *argv[]){
     // de qualquer forma
     if (modo[0] == 'c') {
         allocate_image_buffer_maquina();
-        if (rank == 0)
-            allocate_image_buffer_MASTER();
     }
-    MPI_Barrier(MPI_COMM_WORLD);
+
     compute_mandelbrot();
 printf ("++++++++%d %d\n", rank, size);
     
-       
-    MPI_Gather(image_buffer, image_buffer_size, MPI_INT, image_buffer_MASTER, image_buffer_size, MPI_INT, 0, MPI_COMM_WORLD);
+	MPI_Barrier(MPI_COMM_WORLD);
+    // MPI_Gather(image_buffer, image_buffer_size, MPI_INT, image_buffer_MASTER, image_buffer_size, MPI_INT, 0, MPI_COMM_WORLD);
+	int cont = 0;
+    		
+
+	printf ("size = %d\n", size);
+    while(cont < size){
+    	printf ("cont = %d\n", cont);
+		MPI_Send(image_buffer, image_buffer_size, MPI_INT, 0, 0, MPI_COMM_WORLD);
+        MPI_Recv(image_buffer_MASTER + (cont * ((i_y_max - 1) / size + 1)) * (i_x_max), image_buffer_size, MPI_INT, cont, 0, MPI_COMM_WORLD,MPI_STATUS_IGNORE);
+        // MPI_Recv(image_buffer, image_buffer_size, MPI_INT, rank, 0, MPI_COMM_WORLD,MPI_STATUS_IGNORE);
+		cont++;
+    }
+
 printf ("========%d %d\n", rank, size);
-    MPI_Barrier(MPI_COMM_WORLD);
+    // MPI_Barrier(MPI_COMM_WORLD);
     
 
     if (modo[0] == 'c' && rank == 0) {
