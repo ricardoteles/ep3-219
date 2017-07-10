@@ -128,8 +128,8 @@ void write_to_file(){
     fprintf(file, "P6\n %s\n %d\n %d\n %d\n", comment,
             i_x_max, i_y_max, max_color_component_value);
 
-    for(int i = 0; i < image_buffer_size; i++){
-        fwrite(image_buffer[i], 1 , 3, file);
+    for(int i = 0; i < image_buffer_size_MASTER; i++){
+        fwrite(image_buffer_MASTER[i], 1 , 3, file);
     };
 
     fclose(file);
