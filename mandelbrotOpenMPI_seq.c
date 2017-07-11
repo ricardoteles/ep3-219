@@ -71,6 +71,7 @@ void desallocate_iteration_buffer_MASTER(){
 
 void allocate_iteration_buffer_maquina(){
     //alocar pedaco do vetor a ser computado pelo maquina
+    
     if (rank == size - 1)
         image_buffer_size += (image_buffer_size_MASTER % size);
     iteration_buffer = (int *) malloc(sizeof(int ) * image_buffer_size);
@@ -126,7 +127,7 @@ void update_rgb_buffer(int iteration, int x, int y){
 
 void write_to_file(){
     FILE * file;
-    char * filename               = "output_seq.ppm";
+    char * filename               = "outputOpenMPI_seq.ppm";
     char * comment                = "# ";
 
     int max_color_component_value = 255;
@@ -221,10 +222,10 @@ int main(int argc, char *argv[]){
 
     // as duas versões devem executar a condição dos ifs 
     // de qualquer forma
+    image_buffer_size = image_buffer_size_MASTER / size;
     if (modo[0] == 'c')
         allocate_iteration_buffer_maquina();
 
-    image_buffer_size = image_buffer_size_MASTER / size;
     compute_mandelbrot();
 
     if (modo[0] == 'c') {

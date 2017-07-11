@@ -130,7 +130,7 @@ void update_rgb_buffer(int iteration, int x, int y){
 
 void write_to_file(){
     FILE * file;
-    char * filename               = "output_seq.ppm";
+    char * filename               = "outputOpenMPI_opm.ppm";
     char * comment                = "# ";
 
     int max_color_component_value = 255;
@@ -229,10 +229,10 @@ int main(int argc, char *argv[]){
 
     // as duas versões devem executar a condição dos ifs 
     // de qualquer forma
+    image_buffer_size = image_buffer_size_MASTER / size;
     if (modo[0] == 'c')
         allocate_iteration_buffer_maquina();
 
-    image_buffer_size = image_buffer_size_MASTER / size;
     compute_mandelbrot();
 
     if (modo[0] == 'c') {
