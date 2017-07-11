@@ -1,0 +1,200 @@
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for 'mpirun -np 4 -hostfile hostfile ./mandelbrotOpenMPI_omp 0.175 0.375 -0.1 0.1 8192 2 com':
+
+      44336.085309      task-clock (msec)         #    1.561 CPUs utilized          
+             1,673      context-switches          #    0.038 K/sec                  
+                23      cpu-migrations            #    0.001 K/sec                  
+           740,100      page-faults               #    0.017 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+      28.411084626 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for 'mpirun -np 4 -hostfile hostfile ./mandelbrotOpenMPI_omp 0.175 0.375 -0.1 0.1 8192 2 com':
+
+      44900.835542      task-clock (msec)         #    1.562 CPUs utilized          
+               309      context-switches          #    0.007 K/sec                  
+                13      cpu-migrations            #    0.000 K/sec                  
+           741,041      page-faults               #    0.017 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+      28.746186946 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for 'mpirun -np 4 -hostfile hostfile ./mandelbrotOpenMPI_omp 0.175 0.375 -0.1 0.1 8192 2 com':
+
+      44750.815416      task-clock (msec)         #    1.553 CPUs utilized          
+             1,022      context-switches          #    0.023 K/sec                  
+                17      cpu-migrations            #    0.000 K/sec                  
+           740,498      page-faults               #    0.017 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+      28.809143726 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for 'mpirun -np 4 -hostfile hostfile ./mandelbrotOpenMPI_omp 0.175 0.375 -0.1 0.1 8192 2 com':
+
+      46813.084427      task-clock (msec)         #    1.565 CPUs utilized          
+             1,490      context-switches          #    0.032 K/sec                  
+                16      cpu-migrations            #    0.000 K/sec                  
+           740,184      page-faults               #    0.016 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+      29.912698921 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for 'mpirun -np 4 -hostfile hostfile ./mandelbrotOpenMPI_omp 0.175 0.375 -0.1 0.1 8192 2 com':
+
+      44899.280548      task-clock (msec)         #    1.565 CPUs utilized          
+             1,528      context-switches          #    0.034 K/sec                  
+                23      cpu-migrations            #    0.001 K/sec                  
+           740,121      page-faults               #    0.016 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+      28.692958159 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for 'mpirun -np 4 -hostfile hostfile ./mandelbrotOpenMPI_omp 0.175 0.375 -0.1 0.1 8192 2 com':
+
+      45107.572489      task-clock (msec)         #    1.560 CPUs utilized          
+               836      context-switches          #    0.019 K/sec                  
+                25      cpu-migrations            #    0.001 K/sec                  
+           740,607      page-faults               #    0.016 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+      28.915668489 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for 'mpirun -np 4 -hostfile hostfile ./mandelbrotOpenMPI_omp 0.175 0.375 -0.1 0.1 8192 2 com':
+
+      44012.076589      task-clock (msec)         #    1.564 CPUs utilized          
+               316      context-switches          #    0.007 K/sec                  
+                23      cpu-migrations            #    0.001 K/sec                  
+           740,174      page-faults               #    0.017 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+      28.145223793 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for 'mpirun -np 4 -hostfile hostfile ./mandelbrotOpenMPI_omp 0.175 0.375 -0.1 0.1 8192 2 com':
+
+      44313.775189      task-clock (msec)         #    1.556 CPUs utilized          
+               331      context-switches          #    0.007 K/sec                  
+                26      cpu-migrations            #    0.001 K/sec                  
+           740,932      page-faults               #    0.017 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+      28.482593851 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for 'mpirun -np 4 -hostfile hostfile ./mandelbrotOpenMPI_omp 0.175 0.375 -0.1 0.1 8192 2 com':
+
+      44605.830412      task-clock (msec)         #    1.600 CPUs utilized          
+             1,147      context-switches          #    0.026 K/sec                  
+                23      cpu-migrations            #    0.001 K/sec                  
+           740,110      page-faults               #    0.017 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+      27.879194784 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for 'mpirun -np 4 -hostfile hostfile ./mandelbrotOpenMPI_omp 0.175 0.375 -0.1 0.1 8192 2 com':
+
+      45823.363419      task-clock (msec)         #    1.613 CPUs utilized          
+               321      context-switches          #    0.007 K/sec                  
+                20      cpu-migrations            #    0.000 K/sec                  
+           740,727      page-faults               #    0.016 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+      28.407203575 seconds time elapsed
+
