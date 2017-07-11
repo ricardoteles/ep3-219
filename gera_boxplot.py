@@ -22,129 +22,120 @@ import matplotlib.pyplot as plt
 import statistics as stat
 
 num_medicoes = 10
-num_entradas = 10
 
 lista_results = ["results_8maq_1core", "results_4maq_2core", "results_2maq_4core", "results_1maq_8core"]
 lista_diretorios = ["mandelbrotOpenMPI_omp", "mandelbrotOpenMPI_seq", "mandelbrot_seq"]
 regioes = ['full', 'seahorse', 'elephant', 'triple_spiral']
 
-# entradas = ['16', '32', '64', '128', '256', '512', '1024', '2048', '4096', '8192']
-
-arq_med = open("medianas.txt", "w")
-arq_med.write("Entradas: 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192\n\n")
-
 ###################### parser dos tempos de cada arquivo #############################
 # cada arquivo .log tera um grafico
-for results in lista_results[:1]:
+
+amostras = {
+	'com':{
+		'full': {'mandelbrotOpenMPI_omp': {},'mandelbrotOpenMPI_seq': {},'mandelbrot_seq': {}}, 
+		'seahorse': {'mandelbrotOpenMPI_omp': {},'mandelbrotOpenMPI_seq': {},'mandelbrot_seq': {}},
+		'elephant': {'mandelbrotOpenMPI_omp': {},'mandelbrotOpenMPI_seq': {},'mandelbrot_seq': {}},
+		'triple': {'mandelbrotOpenMPI_omp': {},'mandelbrotOpenMPI_seq': {},'mandelbrot_seq': {}}
+	},
+	'sem':{
+		'full': {'mandelbrotOpenMPI_omp': {},'mandelbrotOpenMPI_seq': {},'mandelbrot_seq': {}}, 
+		'seahorse': {'mandelbrotOpenMPI_omp': {},'mandelbrotOpenMPI_seq': {},'mandelbrot_seq': {}},
+		'elephant': {'mandelbrotOpenMPI_omp': {},'mandelbrotOpenMPI_seq': {},'mandelbrot_seq': {}},
+		'triple': {'mandelbrotOpenMPI_omp': {},'mandelbrotOpenMPI_seq': {},'mandelbrot_seq': {}}
+	}  
+}
+
+for results in lista_results[:2]:
 	for diretorio in lista_diretorios:
 		lista_arquivos = os.listdir(results+"/"+diretorio)
-
-		# print diretorio
 
 		for arquivo in lista_arquivos:
 			arq = open(results+"/"+diretorio+"/"+arquivo, 'r')
 			
+			nome_arq_aux = arquivo.split("_")
+			nome_regiao = nome_arq_aux[0]
+			modo_arq = nome_arq_aux[-1].split(".")[0]
+
 			texto = arq.read() 
 
 			tempos = re.findall(r"\d+[,.]\d+ seconds time elapsed", texto)
 			numeros = []
 
-
 			for x in tempos:
 				aux = x.split(" seconds time elapsed")
 				numeros.append(float(aux[0].replace(",", "."))) 
+
+			amostras[modo_arq][nome_regiao][diretorio][results] = numeros            
+			amostras[modo_arq][nome_regiao][diretorio][results].sort()
 			arq.close()
-
-			# # debug (fabio)
-			# print results+"/"+diretorio+"/"+arquivo
-	
-			# # debug (ricardos)
-	# 		print "\n("+arquivo+"):"
-	# 		print numeros
-	# 	print
-	# print
-	
-
-
-		# 	data_to_plot = []
-		# 	mediana = []
-
-		# 	for j in range(0, num_entradas):
-		# 		## define uma amostra
-		# 		amostra = numeros[(num_medicoes * j) : (num_medicoes * (j+1))]
-		# 		amostra.sort()
-
-		# 		mediana.append(stat.median(amostra))
-
-		# 		##  E a adiciona numa coleção global delas  
-		# 		data_to_plot.append(amostra)
-
 			
-		# 	# Cria uma instancia de figura e eixos
-		# 	fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(10, 9))
 
-		# 	# Cria o boxplot
-		# 	box_plot = ax.boxplot(data_to_plot)
+###########################################
+# mediana = []
+
+## define uma amostra
+# amostra = numeros[:]
+# amostra.sort()
+
+# mediana.append(stat.median(amostra))
+
+##  E a adiciona numa coleção global delas  
+# data_to_plot.append(amostra)
 
 
-		# 	maximo = 0
-		# 	for j in range(num_entradas):
-		# 	 	if data_to_plot[j][-1] > maximo:
-		# 	 		maximo = data_to_plot[j][-1]
-			
-		# 	ax.set_xticklabels(entradas)
-		# 	ax.yaxis.grid(True)
-			
-		# 	plt.xlabel('Tamanho Da Entrada', fontsize=10, color='red')
-		# 	plt.ylabel('Tempo Em Segundos', fontsize=10, color='red')
 
-		# 	title = './'+diretorio
-		# 	title += ', regiao: '
+# Cria o boxplot
+for modoKey, modo in amostras.items():
+	for regiaoKey, regiao in modo.items():
 
-		# 	for regiao in regioes:
-		# 		lista = re.findall(regiao, arquivo)			
-		# 		# encontra o nome da regiao atual			
-		# 		if len(lista) > 0:
-		# 			title += regiao
+		# Cria uma instancia de figura e eixos
+		fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(10, 9))
+		data_to_plot = []
 
-		# 	if diretorio == 'mandelbrot_seq':
-		# 		s = arquivo[-7:-4]
-		# 		title += (', '+s.upper()+' I/O e aloc. memoria')
-			
-		# 	else:
-		# 		lista = re.findall(r"\d+", arquivo)			
-		# 		title += (', #threads: '+lista[0])
+		for _, tipoCodigo in regiao.items():
+			for _, tipoConfig in tipoCodigo.items():
+				data_to_plot.append(tipoConfig)
+		
+		box_plot = ax.boxplot(data_to_plot)
+		
+		maximo = 0
+		
+		for amostra in data_to_plot:
+			if amostra[-1] > maximo:
+				maximo = amostra[-1]
 
-		# 	plt.title(title, fontsize=10)
+		ax.set_xticklabels(["8maq_1core", "4maq_2core", "2maq_4core", "1maq_8core_openMPI_seq", "8maq_1core", "4maq_2core", "2maq_4core", "1maq_8core_seq","8maq_1core", "4maq_2core", "2maq_4core", "1maq_8core_openMPI_omp"])
+		ax.yaxis.grid(True)
 
-		# 	############# codigo para imprimir as medianas em um txt ###############
-		# 	arq_med.write(title+"\n")
-		# 	arq_med.write('medianas: ')
-		# 	j = 0
-		# 	while j < len(mediana):
-		# 		x = mediana[j]
-		# 		mediana[j] = str(round(x, 2))
-		# 		arq_med.write(mediana[j]+", ")
-		# 		j += 1
-		# 	arq_med.write("\n\n")
-		# 	########################################################################
+		plt.xlabel('Número de máquinas e cores', fontsize=10, color='red')
+		plt.ylabel('Tempo Em Segundos', fontsize=10, color='red')
+		
+		# a = raw_input()
 
-		# 	## Remove marcadores de eixos
-		# 	ax.get_xaxis().tick_bottom()
-		# 	ax.get_yaxis().tick_left()
+# 	title = 'região: '
 
-		# 	maximo = round(maximo, 5) 
-		# 	interval = round(maximo/30.0, 5)
-		# 	print "maximo = ", maximo
-		# 	print "interval = ", interval
-		# 	print "*************************"
-			
-		# 	plt.yticks(np.arange(0, maximo + interval, interval))
-			
-		# 	# Salva a figura
-		# 	fig.savefig('graphics/'+diretorio+'/'+arquivo[0:-4]+'.png', bbox_inches='tight')
-						
-		# print ''
+# for regiao in regioes:
+# 	lista = re.findall(regiao, arquivo)			
+# 	# encontra o nome da regiao atual			
+# 	if len(lista) > 0:
+# 		title += regiao
 
-print '>> file medianas.txt'
-arq_med.close()
+# s = arquivo[-7:-4]
+# title += (', '+s.upper()+' I/O e aloc. memoria')
+
+# plt.title(title, fontsize=10)
+
+		## Remove marcadores de eixos
+		ax.get_xaxis().tick_bottom()
+		ax.get_yaxis().tick_left()
+
+		maximo = round(maximo, 5) 
+		interval = round(maximo/30.0, 5)
+		print "maximo = ", maximo
+		print "interval = ", interval
+		print "*************************"
+
+		plt.yticks(np.arange(0, maximo + interval, interval))
+
+		# Salva a figura
+		fig.savefig('graphics/'+regiaoKey+'_'+modoKey+'.png', bbox_inches='tight')
