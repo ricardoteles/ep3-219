@@ -1,0 +1,170 @@
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for './mandelbrot_seq -0.188 -0.012 0.554 0.754 8192 com':
+
+     111132.000594      task-clock (msec)         #    0.989 CPUs utilized          
+               225      context-switches          #    0.002 K/sec                  
+                 1      cpu-migrations            #    0.000 K/sec                  
+           655,411      page-faults               #    0.006 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+     112.318269124 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for './mandelbrot_seq -0.188 -0.012 0.554 0.754 8192 com':
+
+     110869.848971      task-clock (msec)         #    0.989 CPUs utilized          
+               217      context-switches          #    0.002 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+           655,410      page-faults               #    0.006 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+     112.049702714 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for './mandelbrot_seq -0.188 -0.012 0.554 0.754 8192 com':
+
+     112063.985736      task-clock (msec)         #    0.990 CPUs utilized          
+               220      context-switches          #    0.002 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+           655,410      page-faults               #    0.006 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+     113.236440765 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for './mandelbrot_seq -0.188 -0.012 0.554 0.754 8192 com':
+
+     111390.339206      task-clock (msec)         #    0.990 CPUs utilized          
+               218      context-switches          #    0.002 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+           655,411      page-faults               #    0.006 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+     112.543484448 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for './mandelbrot_seq -0.188 -0.012 0.554 0.754 8192 com':
+
+     111670.991326      task-clock (msec)         #    0.990 CPUs utilized          
+               218      context-switches          #    0.002 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+           655,412      page-faults               #    0.006 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+     112.840227602 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for './mandelbrot_seq -0.188 -0.012 0.554 0.754 8192 com':
+
+     111455.770891      task-clock (msec)         #    0.990 CPUs utilized          
+               217      context-switches          #    0.002 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+           655,410      page-faults               #    0.006 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+     112.609879341 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for './mandelbrot_seq -0.188 -0.012 0.554 0.754 8192 com':
+
+     111411.104468      task-clock (msec)         #    0.990 CPUs utilized          
+               221      context-switches          #    0.002 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+           655,412      page-faults               #    0.006 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+     112.562261817 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for './mandelbrot_seq -0.188 -0.012 0.554 0.754 8192 com':
+
+     113222.346978      task-clock (msec)         #    0.990 CPUs utilized          
+               224      context-switches          #    0.002 K/sec                  
+                 1      cpu-migrations            #    0.000 K/sec                  
+           655,411      page-faults               #    0.006 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+     114.371793949 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for './mandelbrot_seq -0.188 -0.012 0.554 0.754 8192 com':
+
+     111755.225464      task-clock (msec)         #    0.990 CPUs utilized          
+               220      context-switches          #    0.002 K/sec                  
+                 1      cpu-migrations            #    0.000 K/sec                  
+           655,410      page-faults               #    0.006 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+     112.901396937 seconds time elapsed
+
+MODO = com I/O e alloc. memoria
+
+ Performance counter stats for './mandelbrot_seq -0.188 -0.012 0.554 0.754 8192 com':
+
+     112513.094069      task-clock (msec)         #    0.990 CPUs utilized          
+               221      context-switches          #    0.002 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+           655,412      page-faults               #    0.006 M/sec                  
+   <not supported>      cycles                   
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   <not supported>      instructions             
+   <not supported>      branches                 
+   <not supported>      branch-misses            
+
+     113.662710603 seconds time elapsed
+
