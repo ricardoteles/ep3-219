@@ -5,7 +5,7 @@ set -o xtrace
 NP=8
 NTHREADS=1
 
-MEASUREMENTS=1
+MEASUREMENTS=10
 SIZE=8192
 
 NAMES=('mandelbrotOpenMPI_seq' 'mandelbrotOpenMPI_omp' 'mandelbrot_seq')
