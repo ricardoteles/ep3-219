@@ -2,8 +2,8 @@
 
 set -o xtrace
 
-NP=1
-NTHREADS=8
+NP=2
+NTHREADS=4
 
 MEASUREMENTS=10
 SIZE=8192
