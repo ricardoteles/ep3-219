@@ -99,7 +99,7 @@ for modoKey, modo in amostras.items():
 				data_to_plotIndivual.append(tipoConfig)		
 			data_to_plot.append([0,0,0,0,0,0,0,0,0,0]) #para criar um espaco entre os result dos dif codigos
 			box_plotIndivual = axIndivual.boxplot(data_to_plotIndivual)
-			axIndivual.set_xticklabels(["8maq_1core", "4maq_2core", "2maq_4core", "1maq_8core"], rotation = 90)
+			axIndivual.set_xticklabels(["1maq_8core", "2maq_4core", "4maq_2core", "8maq_1core"], rotation = 90)
 			axIndivual.yaxis.grid(True)
 
 			plt.xlabel('Número de máquinas e cores', fontsize=10, color='red')
@@ -126,7 +126,7 @@ for modoKey, modo in amostras.items():
 
 		box_plot = ax.boxplot(data_to_plot)
 		
-		ax.set_xticklabels(["8maq_1core_seq", "4maq_2core_seq", "2maq_4core_seq", "1maq_8core_seq","","8maq_1core_openMPI_seq", "4maq_2core_openMPI_seq", "2maq_4cor_openMPI_seq", "1maq_8core_openMPI_seq","","8maq_1cor_openMPI_omp", "4maq_2core_openMPI_omp", "2maq_4core_openMPI_omp", "1maq_8core_openMPI_omp"], rotation = 90)
+		ax.set_xticklabels(["1maq_8core_seq", "2maq_4core_seq", "4maq_2core_seq", "8maq_1core_seq","","1maq_8core_openMPI_seq", "2maq_4core_openMPI_seq", "4maq_2core_openMPI_seq", "8maq_1core_openMPI_seq","","1maq_8core_openMPI_omp", "2maq_4core_openMPI_omp", "4maq_2core_openMPI_omp", "8maq_1core_openMPI_omp"], rotation = 90)
 		ax.yaxis.grid(True)
 
 		plt.xlabel('Número de máquinas e cores', fontsize=10, color='red')
